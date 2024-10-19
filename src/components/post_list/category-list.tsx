@@ -36,7 +36,7 @@ const CategoryList = ({
   return (
     <>
       <section className="mb-10 hidden sm:block">
-        <ul className="flex gap-3">
+        <ul className="flex gap-3 flex-wrap">
           <CategoryButton
             href="/"
             isCurrent={currentCategory === "all"}
