@@ -44,7 +44,7 @@ export default function RootLayout({
       className="h-full scroll-my-20 scroll-smooth"
       suppressHydrationWarning
     >
-      <body className="font-pretendard flex min-h-screen flex-col antialiased">
+      <body className="font-pretendard flex min-h-screen flex-col antialiased bg-gradient-to-r from-[#f8fbff] via-[#fffafc] to-[#ffffff] dark:from-[#1a1a1a] dark:via-[#1c1c1c] dark:to-[#1e1e1e]">
         <ThemeProvider attribute="class" defaultTheme="system">
           <Header />
           <main className="mt-[64px] flex flex-1 flex-col">{children}</main>
