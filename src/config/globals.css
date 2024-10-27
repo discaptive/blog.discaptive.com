@@ -14,8 +14,8 @@ body {
 
 @layer base {
   :root {
-    --white: #ffffff;
-    --black: #121212;
+    --white: 255 255 255;
+    --black: 18 18 18;
 
     --background: var(--white);
     --foreground: var(--black);
