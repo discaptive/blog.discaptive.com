@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className=" scroll-smooth">
       <body
-        className={`${pretendard.variable} font-pretendard antialiased flex flex-col min-h-screen bg-gradient-to-r from-[#f8fbff] via-[#fffafc] to-[#ffffff] dark:from-[#1a1a1a] dark:via-[#1c1c1c] dark:to-[#1e1e1e]`}
+        className={`${pretendard.variable} font-pretendard antialiased flex flex-col min-h-screen  bg-[#ffffff] dark:bg-[#1a1a1a]`}
       >
         <ThemeProvider
           attribute="class"
