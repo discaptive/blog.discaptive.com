@@ -6,13 +6,21 @@ import {
   blogName,
   blogThumbnailURL,
 } from "@/config/const";
+import localFont from "next/font/local";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Header } from "@/layouts/header";
-import { Footer } from "@/layouts/footer";
+import Header from "@/components/layouts/header";
+import Footer from "@/components/layouts/footer";
+
+const pretendard = localFont({
+  src: "/fonts/PretendardVariable.woff2",
+  display: "swap",
+  weight: "45 920",
+  variable: "--font-pretendard",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseDomain),
@@ -39,15 +47,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className="h-full scroll-my-20 scroll-smooth"
-      suppressHydrationWarning
-    >
-      <body className="font-pretendard flex min-h-screen flex-col antialiased bg-gradient-to-r from-[#f8fbff] via-[#fffafc] to-[#ffffff] dark:from-[#1a1a1a] dark:via-[#1c1c1c] dark:to-[#1e1e1e]">
-        <ThemeProvider attribute="class" defaultTheme="system">
+    <html lang="en" suppressHydrationWarning className=" scroll-smooth">
+      <body
+        className={`${pretendard.variable} font-pretendard antialiased flex flex-col min-h-screen bg-gradient-to-r from-[#f8fbff] via-[#fffafc] to-[#ffffff] dark:from-[#1a1a1a] dark:via-[#1c1c1c] dark:to-[#1e1e1e]`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Header />
-          <main className="mt-[64px] flex flex-1 flex-col">{children}</main>
+          <main className="mt-16 flex flex-1 flex-col">{children}</main>
           <Footer />
         </ThemeProvider>
         <Toaster />
