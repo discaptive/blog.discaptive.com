@@ -1,6 +1,6 @@
 # About the project
 
-![](https://github.com/user-attachments/assets/64060614-1015-42dc-b9e4-77a252de1c74)
+![](https://github.com/user-attachments/assets/f84d1b34-6185-4a1a-ac59-e8847ddf9a3d)
 
 `Next.js`와 `GitHub Actions`를 이용하여 블로그를 구축했습니다.
 
