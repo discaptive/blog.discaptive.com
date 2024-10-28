@@ -29,16 +29,14 @@ export default function Header() {
         </Link>
 
         <div className="flex items-center">
-          <Button variant="link">
-            <Link href="/about" className="font-normal">
-              About
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon">
-            <Link href="https://github.com/discaptive" target="_blank">
+          <Link href="/about" className="font-normal">
+            <Button variant="link">About</Button>
+          </Link>
+          <Link href="https://github.com/discaptive" target="_blank">
+            <Button variant="ghost" size="icon">
               <SiGithub />
-            </Link>
-          </Button>
+            </Button>
+          </Link>
           <ModeToggle />
         </div>
       </div>

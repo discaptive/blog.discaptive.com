@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Post } from "@/config/types";
-import { CalendarDays, Clock3 } from "lucide-react";
+import { Clock3 } from "lucide-react";
 
 interface Props {
   post: Post;
@@ -10,42 +10,51 @@ interface Props {
 
 const PostCard = ({ post }: Props) => {
   return (
-    <Link href={post.url}>
-      <li className="flex h-full flex-col gap-3 overflow-hidden rounded-xl border shadow-sm transition hover:shadow-xl dark:border-slate-700 dark:hover:border-white">
-        <div className="relative aspect-video w-full rounded-t-md border-b">
-          <Image
-            src={post.thumbnail}
-            alt={`thumbnail for ${post.title}`}
-            sizes="(max-width: 1000px) 50vw, 450px"
-            fill
-            priority
-            style={{
-              objectFit: "cover",
-            }}
-          />
-        </div>
-        <div className="flex flex-1 flex-col justify-between p-4 pt-1">
-          <div>
-            <div className="text-sm font-medium text-indigo-600 lg:text-base">
-              {post.categoryPublicName}
+    <>
+      <div>
+        <li className="flex items-center gap-12 py-4">
+          <Link href={post.url} className="hidden sm:inline flex-shrink-0">
+            <Image
+              src={post.thumbnail}
+              alt={`thumbnail for ${post.title}`}
+              className="object-cover aspect-[328/220] w-[328px] h-[220px] rounded-2xl border border-secondary hover:opacity-75"
+              width={328}
+              height={220}
+            />
+          </Link>
+
+          <Link href={post.url} className="flex-grow">
+            <div className="flex flex-col gap-1 hover:opacity-75">
+              <div className="text-sm font-medium text-indigo-600">
+                {post.categoryPublicName}
+              </div>
+
+              <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-3">
+                  <div className="text-xs font-normal text-primary/50">
+                    {post.dateString}
+                  </div>
+
+                  <div className="text-2xl font-bold line-clamp-2">
+                    {post.title}
+                  </div>
+
+                  <div className="text-base font-normal line-clamp-2">
+                    {post.desc}
+                  </div>
+                </div>
+
+                <div className="flex gap-1 items-center text-xs font-normal text-primary/40">
+                  <Clock3 className="w-[13px]" />
+                  <span>{post.readingMinutes}분 소요</span>
+                </div>
+              </div>
             </div>
-            <h2 className="mb-3 mt-1 text-lg font-bold sm:text-xl md:text-lg">
-              {post.title}
-            </h2>
-          </div>
-          <div className="flex justify-between gap-3 text-sm text-gray-500 dark:text-gray-400">
-            <div className="flex items-center gap-1">
-              <CalendarDays className="w-3.5" />
-              <span>{post.dateString}</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Clock3 className="w-3.5" />
-              <span>{post.readingMinutes}분</span>
-            </div>
-          </div>
-        </div>
-      </li>
-    </Link>
+          </Link>
+        </li>
+      </div>
+      <div className="h-[1.4px] bg-secondary my-4"></div>
+    </>
   );
 };
 

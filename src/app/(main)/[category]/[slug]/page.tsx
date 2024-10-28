@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 
 import FloatingButton from "@/components/common/floating-button";
 import Giscus from "@/components/post_detail/giscus";
@@ -66,6 +67,15 @@ const PostDetail = async ({ params: { category, slug } }: Props) => {
       <TocTop toc={toc} />
       <article className="relative">
         <TocSidebar toc={toc} />
+
+        <Image
+          className="object-cover aspect-[702/328] w-[702px] h-[328px] m-0 rounded-3xl border border-secondary"
+          src={post.thumbnail}
+          width={702}
+          height={328}
+          alt={`thumbnail for {post.title}`}
+        />
+
         <PostBody post={post} />
       </article>
       <hr />
