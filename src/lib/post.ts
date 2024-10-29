@@ -54,10 +54,10 @@ const parsePostDetail = async (postPath: string) => {
   return { ...grayMatter, dateString, content, readingMinutes };
 };
 
-// category folder name을 public name으로 변경 : dir_name -> Dir Name
+// category folder name을 public name으로 변경 : dir-name -> Dir Name
 export const getCategoryPublicName = (dirPath: string) =>
   dirPath
-    .split("_")
+    .split("-")
     .map((token) => token[0].toUpperCase() + token.slice(1, token.length))
     .join(" ");
 
