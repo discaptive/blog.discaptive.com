@@ -1,10 +1,10 @@
-import CategoryList from "./category-list";
-import PostCard from "./post-card";
 import {
   getAllPostCount,
   getCategoryDetailList,
   getSortedPostList,
 } from "@/lib/post";
+import CategoryList from "./category-list";
+import PostCard from "./post-card";
 
 interface PostListProps {
   category?: string;

@@ -40,7 +40,7 @@ const PostCard = ({ post }: Props) => {
                   </div>
 
                   <div className="text-base font-normal line-clamp-2">
-                    {post.desc}
+                    {post.description}
                   </div>
                 </div>
 

@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 
-import CopyLinkButton from "../common/copy-link-button";
-import { ScrollToComment, ScrollTop } from "../common/toc-buttons";
 import { HeadingItem } from "@/config/types";
 import { useHeadingsObserver } from "@/hooks/use-headings-observer";
 import { cn } from "@/lib/utils";
+import CopyLinkButton from "../common/copy-link-button";
+import { ScrollToComment, ScrollTop } from "../common/toc-buttons";
 
 interface Props {
   toc: HeadingItem[];

@@ -1,5 +1,5 @@
-import { MdxComponents } from "../mdx";
 import { Post } from "@/config/types";
+import { MdxComponents } from "../mdx";
 // @ts-expect-error no types
 import remarkA11yEmoji from "@fec/remark-a11y-emoji";
 import { MDXRemote } from "next-mdx-remote/rsc";

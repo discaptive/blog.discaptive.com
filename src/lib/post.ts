@@ -11,14 +11,14 @@ const BASE_ABOUT_PATH = "/_data/about";
 const POSTS_PATH = path.join(process.cwd(), BASE_POSTS_PATH);
 const ABOUT_PATH = path.join(process.cwd(), BASE_ABOUT_PATH);
 
-// 모든 MDX 파일 조회
+// 모든 MD 파일 조회
 export const getPostPaths = (category?: string) => {
   const folder = category || "**";
-  const postPaths: string[] = sync(`${POSTS_PATH}/${folder}/**/*.mdx`);
+  const postPaths: string[] = sync(`${POSTS_PATH}/${folder}/**/*.md`);
   return postPaths;
 };
 
-// MDX 파일 파싱 : abstract / detail 구분
+// MD 파일 파싱 : abstract / detail 구분
 const parsePost = async (postPath: string): Promise<Post> => {
   const postAbstract = parsePostAbstract(postPath);
   const postDetail = await parsePostDetail(postPath);
@@ -28,13 +28,13 @@ const parsePost = async (postPath: string): Promise<Post> => {
   };
 };
 
-// MDX의 개요 파싱
+// MD의 개요 파싱
 // url, cg path, cg name, slug
 export const parsePostAbstract = (postPath: string) => {
   const filePath = postPath
     .slice(postPath.indexOf(BASE_POSTS_PATH))
     .replace(`${BASE_POSTS_PATH}/`, "")
-    .replace(".mdx", "");
+    .replace(".md", "");
 
   const [categoryPath, slug] = filePath.split("/");
   const url = `/${categoryPath}/${slug}`;
@@ -42,7 +42,7 @@ export const parsePostAbstract = (postPath: string) => {
   return { url, categoryPath, categoryPublicName, slug };
 };
 
-// MDX detail
+// MD detail
 const parsePostDetail = async (postPath: string) => {
   const file = fs.readFileSync(postPath, "utf8");
   const { data, content } = matter(file);
@@ -122,14 +122,14 @@ export const getCategoryDetailList = async () => {
 
 // post 상세 페이지 내용 조회
 export const getPostDetail = async (category: string, slug: string) => {
-  const filePath = `${POSTS_PATH}/${category}/${slug}/content.mdx`;
+  const filePath = `${POSTS_PATH}/${category}/${slug}/content.md`;
   const detail = await parsePost(filePath);
   return detail;
 };
 
 // about 상세 페이지 내용 조회
 export const getAboutDetail = async () => {
-  const filePath = `${ABOUT_PATH}/content.mdx`;
+  const filePath = `${ABOUT_PATH}/content.md`;
   const detail = await parsePost(filePath);
   return detail;
 };

@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 
-import * as Icon from "./icons";
 import { cn } from "@/lib/utils";
+import * as Icon from "./icons";
 
 type CalloutType = "info" | "warn" | "danger" | "normal";
 

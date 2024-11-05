@@ -1,6 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-export default function useWatchTimeout(watch: unknown, ms: number, callback: () => void) {
+export default function useWatchTimeout(
+  watch: unknown,
+  ms: number,
+  callback: () => void
+) {
   useEffect(() => {
     let timeOut: NodeJS.Timeout;
 

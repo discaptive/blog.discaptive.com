@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 
-import { CategoryButton } from "./category-button";
 import {
   Select,
   SelectContent,
@@ -11,6 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CategoryDetail } from "@/config/types";
+import { CategoryButton } from "./category-button";
 
 interface CategoryListProps {
   categoryList: CategoryDetail[];

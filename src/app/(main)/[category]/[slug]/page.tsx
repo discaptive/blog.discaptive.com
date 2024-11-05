@@ -32,11 +32,11 @@ export async function generateMetadata({
 
   return {
     title,
-    description: post.desc,
+    description: post.description,
 
     openGraph: {
       title,
-      description: post.desc,
+      description: post.description,
       type: "article",
       publishedTime: post.date.toISOString(),
       url: `${baseDomain}${post.url}`,
@@ -44,7 +44,7 @@ export async function generateMetadata({
     },
     twitter: {
       title,
-      description: post.desc,
+      description: post.description,
       images: [imageURL],
     },
   };
@@ -73,7 +73,7 @@ const PostDetail = async ({ params: { category, slug } }: Props) => {
           src={post.thumbnail}
           width={702}
           height={328}
-          alt={`thumbnail for {post.title}`}
+          alt={`thumbnail for ${post.title}`}
         />
 
         <PostBody post={post} />

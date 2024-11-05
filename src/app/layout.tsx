@@ -1,19 +1,19 @@
-import type { Metadata } from "next";
-import "@/config/globals.css";
+import Footer from "@/components/layouts/footer";
+import Header from "@/components/layouts/header";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 import {
   baseDomain,
-  blogDesc,
+  blogDescription,
   blogName,
   blogThumbnailURL,
 } from "@/config/const";
-import localFont from "next/font/local";
+import "@/config/globals.css";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Header from "@/components/layouts/header";
-import Footer from "@/components/layouts/footer";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
 
 const pretendard = localFont({
   src: "/fonts/PretendardVariable.woff2",
@@ -25,10 +25,10 @@ const pretendard = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(baseDomain),
   title: blogName,
-  description: blogDesc,
+  description: blogDescription,
   openGraph: {
     title: blogName,
-    description: blogDesc,
+    description: blogDescription,
     siteName: blogName,
     images: [blogThumbnailURL],
     type: "website",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: blogName,
-    description: blogDesc,
+    description: blogDescription,
     images: [blogThumbnailURL],
   },
 };

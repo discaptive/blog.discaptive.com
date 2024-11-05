@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const useHeadingsObserver = (query: string) => {
   const observer = useRef<IntersectionObserver | null>(null);

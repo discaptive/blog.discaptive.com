@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 
@@ -11,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Dot, LucideIcon, Monitor, Sun, MoonStar as Moon } from "lucide-react";
+import { Dot, LucideIcon, Monitor, MoonStar as Moon, Sun } from "lucide-react";
 
 interface DropdownItemProps {
   type: string;

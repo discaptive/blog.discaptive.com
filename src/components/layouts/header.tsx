@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 import { ModeToggle } from "@/components/mode-toggle";
-import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 import { SiGithub } from "react-icons/si";
 
 export default function Header() {

@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 
-import CopyLinkButton from "./copy-link-button";
-import { ScrollToComment, ScrollTop } from "./toc-buttons";
 import { Button } from "@/components/ui/button";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { cn } from "@/lib/utils";
 import { Bolt } from "lucide-react";
+import CopyLinkButton from "./copy-link-button";
+import { ScrollToComment, ScrollTop } from "./toc-buttons";
 
 const FloatingButton = () => {
   const [visible, setVisible] = useState(false);
